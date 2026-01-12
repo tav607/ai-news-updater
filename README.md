@@ -28,7 +28,7 @@ This tool automatically extracts AI-related articles from FreshRSS, generates ar
 2. Clone the repository:
    ```bash
    git clone <repository_url>
-   cd ai_news_summary
+   cd ai-news-updater
    ```
 
 3. Install dependencies:
