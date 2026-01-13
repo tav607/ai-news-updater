@@ -33,4 +33,5 @@ abstract_md/*
 deliverable/*
 !deliverable/.gitkeep
 articles/*
-!articles/.gitkeep 
+!articles/.gitkeep
+cron.log
