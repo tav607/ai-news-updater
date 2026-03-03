@@ -96,8 +96,8 @@ WECHAT_URL_PATTERN_CONTAINS="wechat2rss_or_other_service_provider"
 Gemini_API_KEY="YOUR_GEMINI_API_KEY"
 Gemini_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
 # Models per step (supports Gemini 2.5 and 3 series)
-Gemini_ABSTRACT_MODEL_ID="gemini-3-flash-preview"
-Gemini_SUMMARY_MODEL_ID="gemini-3-pro-preview"
+Gemini_ABSTRACT_MODEL_ID="gemini-flash-latest"
+Gemini_SUMMARY_MODEL_ID="gemini-pro-latest"
 ```
 
 ### Upload Configuration

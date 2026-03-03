@@ -45,8 +45,8 @@ Package management: `uv` (see pyproject.toml)
 | Variable | Purpose |
 |----------|---------|
 | `Gemini_API_KEY` | Google Gemini API key |
-| `Gemini_ABSTRACT_MODEL_ID` | Model for abstracts (default: `gemini-3-flash-preview`) |
-| `Gemini_SUMMARY_MODEL_ID` | Model for summary (default: `gemini-3-pro-preview`) |
+| `Gemini_ABSTRACT_MODEL_ID` | Model for abstracts (default: `gemini-flash-latest`) |
+| `Gemini_SUMMARY_MODEL_ID` | Model for summary (default: `gemini-pro-latest`) |
 | `RCLONE_MD_DEST` | rclone destination for .md files (optional) |
 | `RCLONE_PDF_DEST` | rclone destination for .pdf files (optional) |
 | `DROPBOX_*` | Dropbox API credentials (fallback if rclone not configured) |
@@ -68,7 +68,7 @@ Priority: rclone > Dropbox API
 
 ### Test Gemini API connection
 ```bash
-uv run python -c "from openai import OpenAI; from dotenv import load_dotenv; import os; load_dotenv(); c=OpenAI(api_key=os.getenv('Gemini_API_KEY'),base_url=os.getenv('Gemini_BASE_URL')); print(c.chat.completions.create(model='gemini-3-flash-preview',messages=[{'role':'user','content':'hi'}]).choices[0].message.content)"
+uv run python -c "from openai import OpenAI; from dotenv import load_dotenv; import os; load_dotenv(); c=OpenAI(api_key=os.getenv('Gemini_API_KEY'),base_url=os.getenv('Gemini_BASE_URL')); print(c.chat.completions.create(model='gemini-flash-latest',messages=[{'role':'user','content':'hi'}]).choices[0].message.content)"
 ```
 
 ### Test FreshRSS API connection

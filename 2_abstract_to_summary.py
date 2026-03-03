@@ -110,8 +110,8 @@ def main():
     print(f"Cleaned abstract markdown")
     load_dotenv()
     api_key = os.getenv("Gemini_API_KEY")
-    # 模型：优先从 Gemini_SUMMARY_MODEL_ID 读取；未设置则回退到 Gemini_MODEL_ID；仍未设置则默认 gemini-3-pro-preview。
-    model_id = os.getenv("Gemini_SUMMARY_MODEL_ID") or os.getenv("Gemini_MODEL_ID") or "gemini-3-pro-preview"
+    # 模型：优先从 Gemini_SUMMARY_MODEL_ID 读取；未设置则回退到 Gemini_MODEL_ID；仍未设置则默认 gemini-pro-latest。
+    model_id = os.getenv("Gemini_SUMMARY_MODEL_ID") or os.getenv("Gemini_MODEL_ID") or "gemini-pro-latest"
     base_url = os.getenv("Gemini_BASE_URL")
     if not api_key:
         print("Missing Gemini_API_KEY in environment.")
