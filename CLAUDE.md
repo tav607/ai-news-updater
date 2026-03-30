@@ -33,7 +33,7 @@ Package management: `uv` (see pyproject.toml)
 | `FRESHRSS_API_USER` | FreshRSS username |
 | `FRESHRSS_API_PASSWORD` | FreshRSS API password |
 | `FRESHRSS_API_CATEGORY` | Category names, comma-separated (e.g., `AI-News,Tech`) |
-| `FRESHRSS_API_EXCLUDE_FEEDS` | (Optional) Feed names to exclude, comma-separated |
+| `FRESHRSS_API_INCLUDE_FEEDS` | (Optional) Feed names whitelist, comma-separated (only these feeds are kept) |
 
 **SQLite Mode** (for local database):
 | Variable | Purpose |

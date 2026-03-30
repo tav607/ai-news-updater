@@ -223,16 +223,16 @@ def fetch_articles_from_api(start_ts, end_ts):
         all_articles.extend(articles)
         print(f"  Found {len(articles)} articles in '{category}'")
 
-    # Filter out excluded feeds
-    exclude_feeds_str = os.getenv("FRESHRSS_API_EXCLUDE_FEEDS", "")
-    if exclude_feeds_str:
-        exclude_feeds = set(f.strip() for f in exclude_feeds_str.split(',') if f.strip())
+    # Filter to only include whitelisted feeds
+    include_feeds_str = os.getenv("FRESHRSS_API_INCLUDE_FEEDS", "")
+    if include_feeds_str:
+        include_feeds = set(f.strip() for f in include_feeds_str.split(',') if f.strip())
         before_count = len(all_articles)
         # feed_name is index 4 in tuple (link, title, content, date, feed_name)
-        all_articles = [a for a in all_articles if a[4] not in exclude_feeds]
+        all_articles = [a for a in all_articles if a[4] in include_feeds]
         excluded_count = before_count - len(all_articles)
         if excluded_count > 0:
-            print(f"Excluded {excluded_count} articles from feeds: {', '.join(exclude_feeds)}")
+            print(f"Filtered to whitelist: kept {len(all_articles)}/{before_count} articles ({excluded_count} excluded)")
 
     # Sort by date descending (index 3 is date_val)
     all_articles.sort(key=lambda x: x[3], reverse=True)
